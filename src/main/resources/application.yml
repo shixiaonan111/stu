@@ -1,0 +1,39 @@
+#语法:key-value 结构 2.key和value之间使用:空格
+#   2.yml的配置有层级结构
+
+#指定默认的环境策略
+spring:
+ profiles:
+  active: test
+
+
+
+---
+spring:
+  profiles: prod
+    
+   
+server:
+  port: 8090
+  servlet:
+    context-path: / #项目发布路径,默认条件下/跟目录
+    #tomcat 服务器进行发布默认发布路径的地址webapp目录下
+    #/    root 项目路径
+    #/jt   jt   项目路径
+ #指定用户配置信息
+  msg:
+   username: 石晓楠
+   age: 10  
+--- #表示配置文件分割
+spring:
+ profiles: test
+ server:
+  port: 8080    
+  servlet:
+    context-path: /test
+    
+msg:
+  username: 许三多
+  age: 10    
+          
+#debug: true
